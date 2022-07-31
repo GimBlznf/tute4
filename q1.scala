@@ -1,4 +1,5 @@
 object q5 extends App{
+  
   def calculate(deposit:Double):Double={
     if(deposit<=20000){
       return deposit*0.02;
@@ -10,6 +11,7 @@ object q5 extends App{
       return deposit*0.065;
     }
   }
+  
   println("Total interest : "+calculate(20000.00));
 
 }
