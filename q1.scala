@@ -1,17 +1,16 @@
-object q5 extends App{
+object q1{
   
-  def calculate(deposit:Double):Double={
-    if(deposit<=20000){
-      return deposit*0.02;
-    }else if(deposit<=200000){
-      return deposit*0.04;
-    }else if(deposit<=2000000){
-      return deposit*0.035;
-    }else{
-      return deposit*0.065;
-    }
+  def main(args: Array[String]):Unit={
+    print("Enter deposit amount : ");
+    var deposit = scala.io.StdIn.readDouble();
+    print("The interest is "+findInterest(deposit));
   }
   
-  println("Total interest : "+calculate(20000.00));
+  def findInterest(deposit:Double):Double = deposit match{
+    case  deposit  if deposit<=20000        =>    deposit*0.02
+    case  deposit  if deposit<=200000       =>    deposit*0.04
+    case  deposit  if deposit<=2000000      =>    deposit*0.035
+    case  deposit  if deposit>2000000       =>    deposit*0.065
+  }
 
 }
